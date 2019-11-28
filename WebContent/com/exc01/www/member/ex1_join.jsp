@@ -91,7 +91,7 @@ $(function(){
 		var sid = $('#id').val();
 		
 		$.ajax({
-			url : "/member/idCheck.ck",
+			url : "/Exercise01/member/ex1_idCheck.eck",
 			type : "post",
 			dataType : "json",
 			data : {
@@ -128,7 +128,7 @@ $(function(){
 	<div class="container">
 		<div class="joinLogo">J O I N</div>
 		<div class="listbox">
-	<form method="POST" action="/member/joinExec.nop">
+	<form method="POST" action="/Exercise01/member/ex1_joinExec.exq">
 		<ul class="ulcl">
 			<li><label for="id">I D</label>
 			<input type="text" id="id" name="id" required class="w3-rest">

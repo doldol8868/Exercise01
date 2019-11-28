@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="D:/jsp/app/jsp-api.jar"/>
 	<classpathentry kind="lib" path="D:/jsp/app/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="D:/jsp/app/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/jsp/app/cos.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -8,7 +8,7 @@
 <title>Exercise01</title>
 
 <c:if test="${not empty SID}">
-	<meta http-equiv="Refresh" content="3;url=/Ex1_Main" />
+	<meta http-equiv="Refresh" content="3;url=/Exercise01/Ex1_Main" />
 </c:if>
 
 <link rel="stylesheet" href="/css/w3.css">

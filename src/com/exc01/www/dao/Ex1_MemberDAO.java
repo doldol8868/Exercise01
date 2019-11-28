@@ -96,4 +96,31 @@ public class Ex1_MemberDAO {
 		// 반환값 내보내고
 		return cnt;
 	}
+	
+	// 아이디 체크 전담 처리 함수
+	public int getIdCnt(String sid) {
+		int cnt = 0;
+		
+		con = db.getCon(); // 커넥션 얻어오기
+		
+		String sql = mSQL.getSQL(mSQL.SEL_ID_CK); // 질의 명령 가져오기
+		
+		pstmt = db.getPSTMT(con, sql); // PreparedStatement 가져오기
+		
+		try { 
+			pstmt.setString(1, sid); // 질의명령 완성
+			
+			rs = pstmt.executeQuery(); // 질의명령 보내고 결과 받기
+			
+			rs.next();
+			cnt = rs.getInt("cnt");
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
 }

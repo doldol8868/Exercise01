@@ -33,7 +33,7 @@ public class Ex1_JoinExec implements Ex1_MainController {
 		int cnt = new Ex1_MemberDAO().addMemb(vo);
 		
 		// 3. 결과에 따라 처리
-		String view = "/Ex1_Main";
+		String view = "Ex1_Main";
 		
 		if(cnt == 1) { // 회원가입 성공
 			req.getSession().setAttribute("SID", tid);

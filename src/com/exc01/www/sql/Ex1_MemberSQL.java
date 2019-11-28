@@ -4,7 +4,7 @@ package com.exc01.www.sql;
 public class Ex1_MemberSQL {
 	public final int GET_LOGIN		=	1001;
 	public final int SEL_MEMB_INFO	=	1002;
-	
+	public final int SEL_ID_CK		=	1003;
 	
 	public final int EDIT_MEMB_INFO	=	2001;
 	
@@ -33,6 +33,14 @@ public class Ex1_MemberSQL {
 			buff.append("WHERE ");
 			buff.append("	m_id = ? ");
 			break;
+		case SEL_ID_CK:
+			buff.append("SELECT ");
+			buff.append("	count(*) cnt ");
+			buff.append("FROM ");
+			buff.append("	Ex1_member ");
+			buff.append("WHERE ");
+			buff.append("	m_id = ? ");
+			break;
 		case EDIT_MEMB_INFO:
 			buff.append("UPDATE ");
 			buff.append("	Ex1_member ");
@@ -43,7 +51,7 @@ public class Ex1_MemberSQL {
 			break;
 		case ADD_MEMB:
 			buff.append("INSERT INTO");
-			buff.append("	member ");
+			buff.append("	Ex1_member ");
 			buff.append("VALUES( ");
 			buff.append("	(SELECT NVL(MAX(m_no) + 1, 1001) FROM member), ");
 			buff.append("	?, ?, ?, ?, ?, sysdate ");
