@@ -1,0 +1,80 @@
+# koitt 요청설계 
+# 				- .cls 로 요청이 들어오는 경우 처리해야할 요청 설계
+
+############ 메인페이지 요청 ###########
+1. 메인페이지 폼 요청
+	요청내용	:	/
+	파라미터	:	none
+	컨트롤러	:	main.MainCont
+	뷰			:	/main.jsp
+	
+************* 회원 관련 요청 ***************
+1. 로그인 폼 요청
+	요청내용	:	/member/login.cls
+	파라미터	:	무
+	컨트롤러	:	com.koitt.www.controller.member.LoginForm
+	뷰			:	/com/koitt/www/member/login.jsp
+	
+2. 로그인 처리 요청
+	요청내용	:	/member/loginProc.cls
+	파라미터	:	id, pw
+	컨트롤러	:	com.koitt.www.controller.member.LoginProc
+	뷰			:	
+					성공	- 	/ 					: redirect
+					실패	- 	/member/login.cls 	: redirect
+					
+3. 로그아웃 처리 요청
+	요청내용	:	/member/loginout.cls
+	파라미터	:	무
+	컨트롤러	:	com.koitt.www.controller.member.Logout
+	뷰		:	/main
+	
+4. 로그아웃 처리 요청
+	요청내용	:	/member/membInfo.ck
+	파라미터	:	id
+	데이터타입	:	json
+	컨트롤러	:	com.koitt.www.controller.member.MemberInfo
+	뷰		:	무
+	
+5. 회원정보 수정 처리 요청
+	요청내용	:	/member/infoEdit.ck
+	파라미터	:	mail, tel, code
+	데이터타입	:	json
+	컨트롤러	:	com.koitt.www.controller.member.infoEdit
+	뷰		:	무
+=============================================================================
+
+### 파일 업로드 게시판 관령 요청
+
+1. 게시판 뷰 요청
+	요청내용	:	/board/boardList.cls
+	파라미터	:	무
+	컨트롤러	:	com.koitt.www.controller.board.BoardList
+	뷰		:	/com/koitt/www/board/boardList.jsp
+	
+	뷰)
+	프로퍼티스 등록
+
+2. 게시판 입력 폼 요청
+	요청내용	:	/board/boardWrite.cls
+	파라미터	:	무
+	컨트롤러	:	com.koitt.www.controller.board.FboardWrite
+	뷰		:	/com/koitt/www/board/fboardWrite.jsp
+	
+3. 게시판 글 입력 요청
+	요청내용	:	/board/boardWriteProc.cls
+	파라미터	:	title, body [, file ]
+	컨트롤러	:	com.koitt.www.controller.board.FboardWriteProc
+	뷰		:	redirect
+					입력 성공
+						/board/boardList.cls
+				
+					입력 실패
+						/board/boardWrite.cls
+	
+=============================================================================
+. 메인페이지 폼 요청
+	요청내용	:
+	파라미터	:
+	컨트롤러	:
+	뷰		:
